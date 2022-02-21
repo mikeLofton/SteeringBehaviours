@@ -9,13 +9,17 @@ class SeekBehaviour :
 {
 public:
 	SeekBehaviour(const char* name = "SeekBehaviour") : Component::Component(name) {}
+	SeekBehaviour(Actor* agent, Actor* target, MovementComponent* moveComp, const char* name = "SeekBehaviour");
 
 	void update(float deltaTime) override;
 
 private:
 	MovementComponent* m_moveComponent;
 	Actor* m_target;
+	Actor* m_agent;
 	MathLibrary::Vector2 m_desiredVelocity;
 	MathLibrary::Vector2 m_steeringForce;
+	MathLibrary::Vector2 m_currentVelocity;
+	float seekForce = 100;
 };
 

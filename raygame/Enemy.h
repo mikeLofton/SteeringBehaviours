@@ -2,6 +2,7 @@
 #include "Actor.h"
 class MovementComponent;
 class Sprite;
+class SeekBehaviour;
 
 class Enemy :
 	public Actor
@@ -29,6 +30,7 @@ public:
 private:
 	MovementComponent* m_moveComponent;
 	Sprite* m_spriteComponent;
+	SeekBehaviour* m_seekBehaviour;
 	Actor* m_target;
 };
 
