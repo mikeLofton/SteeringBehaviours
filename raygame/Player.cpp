@@ -2,6 +2,7 @@
 #include "InputComponent.h"
 #include "MovementComponent.h"
 #include "Sprite.h"
+#include "Transform2D.h"
 
 void Player::start()
 {
@@ -23,5 +24,10 @@ void Player::update(float deltaTime)
 
 	MathLibrary::Vector2 moveDirection = m_inputComponent->getMoveAxis();
 
+	moveDirection.normalize();
+
 	m_moveComponent->setVelocity(moveDirection * 200);
+
+	if (m_moveComponent->getVelocity().getMagnitude() > 0)
+		this->getTransform()->setForward(m_moveComponent->getVelocity().getNormalized());
 }
