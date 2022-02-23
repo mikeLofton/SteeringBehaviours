@@ -11,9 +11,9 @@ void Enemy::start()
 	Actor::start();
 
 	m_spriteComponent = dynamic_cast<Sprite*>(addComponent(new Sprite("Images/enemy.png")));
-	m_moveComponent = dynamic_cast<MovementComponent*>(addComponent(new MovementComponent()));
+	m_moveComponent = addComponent<MovementComponent>();
 	m_seekBehaviour = dynamic_cast<SeekBehaviour*>(addComponent(new SeekBehaviour(this, m_target, m_moveComponent)));
-	/*m_fleeBehavior = dynamic_cast<FleeBehavior*>(addComponent(new FleeBehavior(this, m_target, m_moveComponent)));*/
+	m_fleeBehavior = dynamic_cast<FleeBehavior*>(addComponent(new FleeBehavior(this, m_target, m_moveComponent)));
 }
 
 void Enemy::update(float deltaTime)
