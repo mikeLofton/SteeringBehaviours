@@ -7,7 +7,7 @@ class WanderBehavior :
 	public Component
 {
 public:
-	WanderBehavior(const char* name = "Wander Behavior") : Component::Component(name) {}
+	WanderBehavior() : Component::Component() {}
 	WanderBehavior(Actor* agent, Actor* target, MovementComponent* moveComp, const char* name = "WanderBehaviour");
 
 	void update(float deltaTime) override;

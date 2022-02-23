@@ -7,8 +7,8 @@ class FleeBehavior :
 	public Component
 {
 public:
-	FleeBehavior(const char* name = "Flee Behavior") : Component::Component(name) {}
-	FleeBehavior(Actor* agent, Actor* target, MovementComponent* moveComp, const char* name = "SeekBehaviour");
+	FleeBehavior() : Component::Component() {}
+	FleeBehavior(Actor* agent, Actor* target, MovementComponent* moveComp);
 
 	void update(float deltaTime) override;
 private:

@@ -8,11 +8,11 @@ class Sprite :
 public:
 	/// <param name="texture">Sets the sprites image to be this texture</param>
 	/// <param name="name">The name of the component instance</param>
-	Sprite(Texture2D* texture, const char* name = "SpriteComponent");
+	Sprite(Texture2D* texture);
 
 	/// <param name="path">The path of the texture to load</param>
 	/// <param name="name"></param>
-	Sprite(const char* path, const char* name = "SpriteComponent");
+	Sprite(const char* path);
 
 	~Sprite() override;
 

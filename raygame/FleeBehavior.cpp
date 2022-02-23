@@ -3,7 +3,7 @@
 #include "Actor.h"
 #include "MovementComponent.h"
 
-FleeBehavior::FleeBehavior(Actor* agent, Actor* target, MovementComponent* moveComp, const char* name) : Component::Component(name)
+FleeBehavior::FleeBehavior(Actor* agent, Actor* target, MovementComponent* moveComp) : Component::Component()
 {
 	m_agent = agent;
 	m_target = target;

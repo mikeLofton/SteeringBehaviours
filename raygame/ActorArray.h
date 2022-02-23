@@ -23,6 +23,13 @@ public:
 	bool removeItem(T item);
 
 	/// <summary>
+	/// Removes an actor from the array
+	/// </summary>
+	/// <param name="index">The index to remove from the array</param>
+	/// <returns>False if the index is out of bounds</returns>
+	bool removeItem(int index);
+
+	/// <summary>
 	/// Insertion sort items
 	/// </summary>
 	void sortItems();
@@ -122,6 +129,39 @@ inline bool DynamicArray<T>::removeItem(T item)
 	}
 
 	return itemRemoved;
+}
+
+template<typename T>
+inline bool DynamicArray<T>::removeItem(int index)
+{
+	//Check to see if the index is outside the bounds of our array
+	if (index < 0 || index >= getLength())
+	{
+		return false;
+	}
+
+	bool actorRemoved = false;
+
+	//Create a new array with a size one less than our old array 
+	T* newArray = new T[getLength() - 1];
+	//Create variable to access tempArray index
+	int j = 0;
+	//Copy values from the old array to the new array
+	for (int i = 0; i < getLength(); i++)
+	{
+		//If the current index is not the index that needs to be removed,
+		//add the value into the old array and increment j
+		if (i != index)
+		{
+			newArray[j] = m_items[i];
+			j++;
+		}
+		else
+		{
+			delete &m_items[i];
+			actorRemoved = true;
+		}
+	}
 }
 
 template<typename T>

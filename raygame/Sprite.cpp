@@ -5,12 +5,12 @@
 #include <Matrix3.h>
 #include <cmath>
 
-Sprite::Sprite(Texture2D* texture, const char* name) : Component::Component(name)
+Sprite::Sprite(Texture2D* texture) : Component::Component()
 {
 	m_texture = texture;
 }
 
-Sprite::Sprite(const char* path, const char* name) : Component::Component(name)
+Sprite::Sprite(const char* path) : Component::Component()
 {
 	m_texture = new Texture2D(RAYLIB_H::LoadTexture(path));
 }

@@ -8,8 +8,8 @@ class SeekBehaviour :
 	public Component
 {
 public:
-	SeekBehaviour(const char* name = "SeekBehaviour") : Component::Component(name) {}
-	SeekBehaviour(Actor* agent, Actor* target, MovementComponent* moveComp, const char* name = "SeekBehaviour");
+	SeekBehaviour() : Component::Component() {}
+	SeekBehaviour(Actor* agent, Actor* target, MovementComponent* moveComp);
 
 	void update(float deltaTime) override;
 
