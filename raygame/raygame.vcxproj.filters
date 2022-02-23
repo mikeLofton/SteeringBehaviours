@@ -38,9 +38,6 @@
     <ClCompile Include="Transform2D.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ActorArray.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Player.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -69,7 +66,7 @@
       <Filter>Components</Filter>
     </ClCompile>
     <ClCompile Include="WanderBehavior.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Components</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -125,7 +122,7 @@
       <Filter>Components</Filter>
     </ClInclude>
     <ClInclude Include="WanderBehavior.h">
-      <Filter>Header Files</Filter>
+      <Filter>Components</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

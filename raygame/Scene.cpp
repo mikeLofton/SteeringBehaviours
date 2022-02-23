@@ -3,7 +3,7 @@
 #include <string.h>
 #include "Engine.h"
 
-ActorArray Scene::m_actorsToDelete = ActorArray();
+DynamicArray<Actor*> Scene::m_actorsToDelete = DynamicArray();
 
 Scene::Scene()
 {
