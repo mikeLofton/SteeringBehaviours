@@ -3,6 +3,8 @@
 class MovementComponent;
 class Sprite;
 class SeekBehaviour;
+class FleeBehavior;
+class WanderBehavior;
 
 class Enemy :
 	public Actor
@@ -31,6 +33,8 @@ private:
 	MovementComponent* m_moveComponent;
 	Sprite* m_spriteComponent;
 	SeekBehaviour* m_seekBehaviour;
+	FleeBehavior* m_fleeBehavior;
+	WanderBehavior* m_wanderBehavior;
 	Actor* m_target;
 };
 

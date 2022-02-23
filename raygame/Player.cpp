@@ -26,7 +26,7 @@ void Player::update(float deltaTime)
 
 	moveDirection.normalize();
 
-	m_moveComponent->setVelocity(moveDirection * 200);
+	m_moveComponent->setVelocity(moveDirection * 500);
 
 	if (m_moveComponent->getVelocity().getMagnitude() > 0)
 		this->getTransform()->setForward(m_moveComponent->getVelocity().getNormalized());

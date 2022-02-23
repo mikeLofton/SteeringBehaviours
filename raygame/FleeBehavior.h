@@ -2,17 +2,15 @@
 #include "Component.h"
 #include <Vector2.h>
 class MovementComponent;
-class Actor;
 
-class SeekBehaviour :
+class FleeBehavior :
 	public Component
 {
 public:
-	SeekBehaviour(const char* name = "SeekBehaviour") : Component::Component(name) {}
-	SeekBehaviour(Actor* agent, Actor* target, MovementComponent* moveComp, const char* name = "SeekBehaviour");
+	FleeBehavior(const char* name = "Flee Behavior") : Component::Component(name) {}
+	FleeBehavior(Actor* agent, Actor* target, MovementComponent* moveComp, const char* name = "SeekBehaviour");
 
 	void update(float deltaTime) override;
-
 private:
 	MovementComponent* m_moveComponent;
 	Actor* m_target;
@@ -20,6 +18,6 @@ private:
 	MathLibrary::Vector2 m_desiredVelocity;
 	MathLibrary::Vector2 m_steeringForce;
 	MathLibrary::Vector2 m_currentVelocity;
-	float seekForce = 150;
+	float fleeForce = 150;
 };
 
