@@ -1,25 +1,22 @@
 #pragma once
 #include "Actor.h"
+#include "ActorArray.h"
 class MovementComponent;
 class Sprite;
-class SeekBehaviour;
-class FleeBehavior;
-class WanderBehavior;
+class SteeringBehaviors;
 
 class Enemy :
 	public Actor
 {
 public:
-	Enemy(float x, float y, const char* name, Actor* target) : Actor(x, y, name)
+	Enemy(float x, float y, const char* name) : Actor(x, y, name)
 	{
-		m_target = target;
 		m_moveComponent = nullptr;
 		m_spriteComponent = nullptr;
 	}
 
 	~Enemy()
 	{
-		m_target = nullptr;
 		m_moveComponent = nullptr;
 		m_spriteComponent = nullptr;
 	}
@@ -27,14 +24,16 @@ public:
 	void start() override;
 	void update(float deltaTime) override;
 	void draw() override;
-	void onCollision(Actor* other) override;
+	void onAddComponent(Component* comp) override;
+	float getForce() { return m_force; }
+	void setForce(float value);
 
 private:
+	DynamicArray<SteeringBehaviors*> m_steeringBehaviors;
 	MovementComponent* m_moveComponent;
 	Sprite* m_spriteComponent;
-	SeekBehaviour* m_seekBehaviour;
-	FleeBehavior* m_fleeBehavior;
-	WanderBehavior* m_wanderBehavior;
-	Actor* m_target;
+	float m_maxForce;
+	float m_maxVelocity;
+	float m_force;
 };
 

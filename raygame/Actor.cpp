@@ -34,6 +34,11 @@ void Actor::onCollision(Actor* other)
         m_components[i]->onCollision(other);
 }
 
+void Actor::onAddComponent(Component* comp)
+{
+
+}
+
 Component* Actor::addComponent(Component* component)
 {
     //Return null if this component has an owner already

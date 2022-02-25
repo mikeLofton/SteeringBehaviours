@@ -83,6 +83,8 @@ public:
     /// <param name="other">The actor this actor collided with.</param>
     virtual void onCollision(Actor* other);
 
+    virtual void onAddComponent(Component* comp);
+
     /// <summary>
     /// Adds a component to the end of the component array
     /// </summary>

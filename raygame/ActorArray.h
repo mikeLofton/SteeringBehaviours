@@ -195,9 +195,9 @@ template<typename T>
 inline T DynamicArray<T>::getItem(int index)
 {
 	if (index < 0 || index >= getLength())
-		return m_items[index];
+		return T();
 
-	return 0;
+	return m_items[index];
 }
 
 template<typename T>

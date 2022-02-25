@@ -18,6 +18,6 @@ private:
 	MathLibrary::Vector2 m_desiredVelocity;
 	MathLibrary::Vector2 m_steeringForce;
 	MathLibrary::Vector2 m_currentVelocity;
-	float fleeForce = 150;
+	float fleeForce = 0;
 };
 
