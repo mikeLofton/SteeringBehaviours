@@ -83,7 +83,11 @@ public:
     /// <param name="other">The actor this actor collided with.</param>
     virtual void onCollision(Actor* other);
 
-    virtual void onAddComponent(Component* comp);
+    /// <summary>
+    /// Called everytime we add a new component
+    /// </summary>
+    /// <param name="comp"></param>
+    virtual void onAddComponent(Component* comp) {};
 
     /// <summary>
     /// Adds a component to the end of the component array
@@ -162,6 +166,8 @@ inline T* Actor::addComponent()
 
     //Increment component count
     m_componentCount++;
+
+    onAddComponent(component);
 
     return (T*)component;
 }

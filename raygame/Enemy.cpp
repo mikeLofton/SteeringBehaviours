@@ -3,6 +3,7 @@
 #include "MovementComponent.h"
 #include <raymath.h>
 #include "Transform2D.h"
+#include "SteeringBehaviors.h"
 
 void Enemy::start()
 {
@@ -15,6 +16,21 @@ void Enemy::start()
 void Enemy::update(float deltaTime)
 {
 	Actor::update(deltaTime);
+
+	//Get all force being applied from the steering behaviors 
+	for (int i = 0; i < m_steeringBehaviors.getLength(); i++)
+	{
+		m_force = m_force + m_steeringBehaviors[i]->calculateForce();
+	}
+
+	//Clamp force if it exceeds the maximum scale
+	if (m_force.getMagnitude() > getMaxForce())
+	{
+		m_force = m_force.getNormalized() * getMaxForce();
+	}
+
+	//Apply force to velocity
+	getMoveComponent()->setVelocity(getMoveComponent()->getVelocity() + m_force * deltaTime);
 	
 	float posX = Clamp(getTransform()->getLocalPosition().x, 30, 650);
 	float posY = Clamp(getTransform()->getLocalPosition().y, 30, 750);
@@ -24,11 +40,14 @@ void Enemy::update(float deltaTime)
 void Enemy::draw()
 {
 	Actor::draw();
-
 }
 
-void Enemy::setForce(float value)
+void Enemy::onAddComponent(Component* comp)
 {
-	m_force = value;
+	SteeringBehaviors* steeringComponent = dynamic_cast<SteeringBehaviors*>(comp);
+
+	if (steeringComponent)
+		m_steeringBehaviors.addItem(steeringComponent);
 }
+
 

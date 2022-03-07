@@ -8,12 +8,13 @@ class WanderBehavior :
 {
 public:
 	WanderBehavior() : Component::Component() {}
-	WanderBehavior(Actor* agent, Actor* target, MovementComponent* moveComp, const char* name = "WanderBehaviour");
+	WanderBehavior(Actor* target, MovementComponent* moveComp);
 
 	void update(float deltaTime) override;
 private:
 	float wanderRadius;
 	float wanderDistance;
+	float m_force;
 	Actor* wanderTarget;
 };
 

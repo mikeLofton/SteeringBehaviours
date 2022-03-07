@@ -3,9 +3,8 @@
 #include "Actor.h"
 #include "MovementComponent.h"
 
-FleeBehavior::FleeBehavior(Actor* agent, Actor* target, MovementComponent* moveComp) : Component::Component()
+FleeBehavior::FleeBehavior(Actor* target, MovementComponent* moveComp) : Component::Component()
 {
-	m_agent = agent;
 	m_target = target;
 	m_moveComponent = moveComp;
 }

@@ -1,6 +1,7 @@
 #pragma once
 #include "Actor.h"
 #include "ActorArray.h"
+#include <Vector2.h>
 class MovementComponent;
 class Sprite;
 class SteeringBehaviors;
@@ -24,16 +25,33 @@ public:
 	void start() override;
 	void update(float deltaTime) override;
 	void draw() override;
+
+	/// <summary>
+	/// Used to add new steering components to the steering components array
+	/// </summary>
+	/// <param name="comp"></param>
 	void onAddComponent(Component* comp) override;
-	float getForce() { return m_force; }
-	void setForce(float value);
+
+	/// <summary>
+	/// Returns the force currently being applied to the enemy
+	/// </summary>
+	MathLibrary::Vector2 getForce() { return m_force; }
+
+	/// <summary>
+	/// Applies the given force to the enemy
+	/// </summary>
+	/// <param name="value">The given force</param>
+	void setForce(MathLibrary::Vector2 value) { m_force = value; }
+
+	float getMaxForce() { return m_maxForce; }
+	void setMaxForce(float value) { m_maxForce = value; }
+	MovementComponent* getMoveComponent() { return m_moveComponent; }
 
 private:
-	DynamicArray<SteeringBehaviors*> m_steeringBehaviors;
+	DynamicArray<SteeringBehaviors*> m_steeringBehaviors; //Array containing all steering components attached to the enemy
 	MovementComponent* m_moveComponent;
 	Sprite* m_spriteComponent;
 	float m_maxForce;
-	float m_maxVelocity;
-	float m_force;
+	MathLibrary::Vector2 m_force;
 };
 

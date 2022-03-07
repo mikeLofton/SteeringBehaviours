@@ -3,9 +3,8 @@
 #include "Actor.h"
 #include "MovementComponent.h"
 
-SeekBehaviour::SeekBehaviour(Actor* agent, Actor* target, MovementComponent* moveComp) : Component::Component()
+SeekBehaviour::SeekBehaviour(Actor* target, MovementComponent* moveComp) : SteeringBehaviors::SteeringBehaviors()
 {
-	m_agent = agent;
 	m_target = target;
 	m_moveComponent = moveComp;
 }
@@ -19,4 +18,14 @@ void SeekBehaviour::update(float deltaTime)
 	getOwner()->getTransform()->setWorldPostion(getOwner()->getTransform()->getWorldPosition() + (m_moveComponent->getVelocity() * deltaTime));
 
 	getOwner()->getTransform()->setForward(MathLibrary::Vector2::normalize(m_moveComponent->getVelocity()));
+}
+
+MathLibrary::Vector2 SeekBehaviour::calculateForce()
+{
+	if (!getTarget())
+		return { 0,0 };
+
+	MathLibrary::Vector2 directionToTarget = getTarget()->getTransform()->getWorldPosition() - getOwner()->getTransform()->getWorldPosition();
+	
+	return MathLibrary::Vector2();
 }
