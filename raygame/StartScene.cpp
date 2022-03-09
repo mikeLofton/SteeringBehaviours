@@ -7,6 +7,7 @@
 #include "SeekBehaviour.h"
 #include "FleeBehavior.h"
 #include "WanderBehavior.h"
+#include "StateMachine.h"
 
 void StartScene::start()
 {
@@ -16,12 +17,18 @@ void StartScene::start()
 	Enemy* enemy = new Enemy(300, 50, "Enemy");
 	enemy->getTransform()->setScale({ 50, 50 });
 	enemy->setMaxForce(200);
-	FleeBehavior* comp = new FleeBehavior();
-	/*WanderBehavior* comp = new WanderBehavior(50, 3, 150);*/
-	comp->setSteeringForce(150);
+
+	SeekBehaviour* comp = new SeekBehaviour();
+	comp->setSteeringForce(100);
 	comp->setTarget(player);
 
+	WanderBehavior* comp2 = new WanderBehavior(50, 3, 150);
+
+	StateMachine* stateMachine = new StateMachine();
+
 	enemy->addComponent(comp);
+	enemy->addComponent(comp2);
+	enemy->addComponent(stateMachine);
 
 	addActor(player);
 	addActor(enemy);

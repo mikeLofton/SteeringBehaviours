@@ -13,6 +13,9 @@ WanderBehavior::WanderBehavior(float circleDistance, float circleRadius, float w
 
 MathLibrary::Vector2 WanderBehavior::calculateForce()
 {
+	if (getSteeringForce() == 0)
+		return { 0,0 };
+
 	//Find the agent's position and heading
 	MathLibrary::Vector2 ownerPosition = getOwner()->getTransform()->getWorldPosition();
 	MathLibrary::Vector2 heading = getAgent()->getMoveComponent()->getVelocity().getNormalized();

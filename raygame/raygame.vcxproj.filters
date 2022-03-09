@@ -71,6 +71,9 @@
     <ClCompile Include="SteeringBehaviors.cpp">
       <Filter>Components</Filter>
     </ClCompile>
+    <ClCompile Include="StateMachine.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Scene.h">
@@ -128,6 +131,9 @@
       <Filter>Components</Filter>
     </ClInclude>
     <ClInclude Include="SteeringBehaviors.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="StateMachine.h">
       <Filter>Components</Filter>
     </ClInclude>
   </ItemGroup>
