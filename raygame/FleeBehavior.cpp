@@ -2,20 +2,16 @@
 #include "Transform2D.h"
 #include "Actor.h"
 #include "MovementComponent.h"
+#include "Enemy.h"
 
-FleeBehavior::FleeBehavior(Actor* target, MovementComponent* moveComp) : Component::Component()
+MathLibrary::Vector2 FleeBehavior::calculateForce()
 {
-	m_target = target;
-	m_moveComponent = moveComp;
-}
+	if (!getTarget())
+		return { 0,0 };
 
-void FleeBehavior::update(float deltaTime)
-{
-	m_currentVelocity = m_moveComponent->getVelocity();
-	m_desiredVelocity = MathLibrary::Vector2::normalize(getOwner()->getTransform()->getWorldPosition() - m_target->getTransform()->getWorldPosition()) * fleeForce;
-	m_steeringForce = m_desiredVelocity - m_currentVelocity;
-	m_moveComponent->setVelocity(m_moveComponent->getVelocity() + (m_steeringForce * deltaTime));
-	getOwner()->getTransform()->setWorldPostion(getOwner()->getTransform()->getWorldPosition() + (m_moveComponent->getVelocity() * deltaTime));
+	MathLibrary::Vector2 directionToTarget = getOwner()->getTransform()->getWorldPosition() - getTarget()->getTransform()->getWorldPosition();
+	MathLibrary::Vector2 desiredVelocity = directionToTarget.getNormalized() * getSteeringForce();
+	MathLibrary::Vector2 seekForce = desiredVelocity - getAgent()->getMoveComponent()->getVelocity();
 
-	getOwner()->getTransform()->setForward(MathLibrary::Vector2::normalize(m_moveComponent->getVelocity()));
+	return seekForce;
 }

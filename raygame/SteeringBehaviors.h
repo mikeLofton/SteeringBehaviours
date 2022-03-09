@@ -2,6 +2,7 @@
 #include "Component.h"
 #include <Vector2.h>
 class MovementComponent;
+class Enemy;
 
 class SteeringBehaviors :
 	public Component
@@ -34,7 +35,7 @@ public:
 	float getSteeringForce() { return m_steeringForce; }
 	void setSteeringForce(float value) { m_steeringForce = value; }
 
-
+	Enemy* getAgent() { return (Enemy*)getOwner(); }
 
 private:
 	float m_steeringForce = 0;

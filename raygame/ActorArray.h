@@ -217,7 +217,7 @@ inline bool DynamicArray<T>::contains(T item)
 template<typename T>
 inline T DynamicArray<T>::operator[](int index)
 {
-	if (index < 0 || index >= getLength())
+	if (index > 0 || index < getLength())
 		return m_items[index];
 
 	throw std::exception("Index was outside the bounds of the array");

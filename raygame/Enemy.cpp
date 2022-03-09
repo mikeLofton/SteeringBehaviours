@@ -11,6 +11,8 @@ void Enemy::start()
 
 	m_spriteComponent = dynamic_cast<Sprite*>(addComponent(new Sprite("Images/enemy.png")));
 	m_moveComponent = addComponent<MovementComponent>();
+	m_moveComponent->setMaxSpeed(100);
+	m_moveComponent->setUpdateFacing(true);
 }
 
 void Enemy::update(float deltaTime)
@@ -31,10 +33,6 @@ void Enemy::update(float deltaTime)
 
 	//Apply force to velocity
 	getMoveComponent()->setVelocity(getMoveComponent()->getVelocity() + m_force * deltaTime);
-	
-	float posX = Clamp(getTransform()->getLocalPosition().x, 30, 650);
-	float posY = Clamp(getTransform()->getLocalPosition().y, 30, 750);
-	getTransform()->setLocalPosition(MathLibrary::Vector2(posX, posY));
 }
 
 void Enemy::draw()

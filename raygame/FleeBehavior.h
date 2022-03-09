@@ -1,22 +1,12 @@
 #pragma once
-#include "Component.h"
+#include "SeekBehaviour.h"
 #include <Vector2.h>
 class MovementComponent;
 
 class FleeBehavior :
-	public Component
+	public SeekBehaviour
 {
 public:
-	FleeBehavior() : Component::Component() {}
-	FleeBehavior(Actor* target, MovementComponent* moveComp);
-
-	void update(float deltaTime) override;
-private:
-	MovementComponent* m_moveComponent;
-	Actor* m_target;
-	MathLibrary::Vector2 m_desiredVelocity;
-	MathLibrary::Vector2 m_steeringForce;
-	MathLibrary::Vector2 m_currentVelocity;
-	float fleeForce = 0;
+	MathLibrary::Vector2 calculateForce() override;
 };
 

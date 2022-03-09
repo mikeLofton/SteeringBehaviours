@@ -32,10 +32,14 @@ public:
     /// <param name="maxSpeed"></param>
     void setMaxSpeed(float maxSpeed) { m_maxSpeed = maxSpeed; }
 
+    bool getUpdateFacing() { return m_updateFacing; }
+    void setUpdateFacing(bool value) { m_updateFacing = value; }
+
     //Inherited from component class
     void update(float deltaTime) override;
 private:
     MathLibrary::Vector2 m_velocity;
     float m_maxSpeed;
+    bool m_updateFacing;
 };
 
