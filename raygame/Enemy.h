@@ -6,17 +6,17 @@ class MovementComponent;
 class Sprite;
 class SteeringBehaviors;
 
-class Enemy :
+class Agent :
 	public Actor
 {
 public:
-	Enemy(float x, float y, const char* name) : Actor(x, y, name)
+	Agent(float x, float y, const char* name) : Actor(x, y, name)
 	{
 		m_moveComponent = nullptr;
 		m_spriteComponent = nullptr;
 	}
 
-	~Enemy()
+	~Agent()
 	{
 		m_moveComponent = nullptr;
 		m_spriteComponent = nullptr;

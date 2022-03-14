@@ -5,7 +5,7 @@
 #include "Transform2D.h"
 #include "SteeringBehaviors.h"
 
-void Enemy::start()
+void Agent::start()
 {
 	Actor::start();
 
@@ -15,7 +15,7 @@ void Enemy::start()
 	m_moveComponent->setUpdateFacing(true);
 }
 
-void Enemy::update(float deltaTime)
+void Agent::update(float deltaTime)
 {
 	Actor::update(deltaTime);
 
@@ -35,12 +35,12 @@ void Enemy::update(float deltaTime)
 	getMoveComponent()->setVelocity(getMoveComponent()->getVelocity() + m_force * deltaTime);
 }
 
-void Enemy::draw()
+void Agent::draw()
 {
 	Actor::draw();
 }
 
-void Enemy::onAddComponent(Component* comp)
+void Agent::onAddComponent(Component* comp)
 {
 	SteeringBehaviors* steeringComponent = dynamic_cast<SteeringBehaviors*>(comp);
 

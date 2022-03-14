@@ -12,6 +12,9 @@
     <Filter Include="Components">
       <UniqueIdentifier>{eeecc675-2a1b-4eee-8d9c-0a4754c29279}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Decisions">
+      <UniqueIdentifier>{2173afeb-0b12-4da7-ae4a-22d029ec6355}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -74,6 +77,12 @@
     <ClCompile Include="StateMachine.cpp">
       <Filter>Components</Filter>
     </ClCompile>
+    <ClCompile Include="Decision.cpp">
+      <Filter>Decisions</Filter>
+    </ClCompile>
+    <ClCompile Include="BooleanDecision.cpp">
+      <Filter>Decisions</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Scene.h">
@@ -135,6 +144,12 @@
     </ClInclude>
     <ClInclude Include="StateMachine.h">
       <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Decision.h">
+      <Filter>Decisions</Filter>
+    </ClInclude>
+    <ClInclude Include="BooleanDecision.h">
+      <Filter>Decisions</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
