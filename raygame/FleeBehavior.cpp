@@ -2,7 +2,7 @@
 #include "Transform2D.h"
 #include "Actor.h"
 #include "MovementComponent.h"
-#include "Enemy.h"
+#include "Agent.h"
 
 MathLibrary::Vector2 FleeBehavior::calculateForce()
 {

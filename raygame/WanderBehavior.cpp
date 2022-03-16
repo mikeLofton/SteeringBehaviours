@@ -1,6 +1,6 @@
 #include "WanderBehavior.h"
 #include "Transform2D.h"
-#include "Enemy.h"
+#include "Agent.h"
 #include "MovementComponent.h"
 #include <time.h>
 

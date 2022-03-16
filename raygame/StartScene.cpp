@@ -3,7 +3,7 @@
 #include "Sprite.h"
 #include "MovementComponent.h"
 #include "Transform2D.h"
-#include "Enemy.h"
+#include "Agent.h"
 #include "SeekBehaviour.h"
 #include "FleeBehavior.h"
 #include "WanderBehavior.h"
