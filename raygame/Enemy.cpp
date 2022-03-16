@@ -54,5 +54,5 @@ bool Enemy::getTargetInRange()
 bool Enemy::getTargetInSight()
 {
 	MathLibrary::Vector2 directionOfTarget = (m_target->getTransform()->getWorldPosition() - getTransform()->getWorldPosition()).getNormalized();
-	return RAYMATH_H::acos( MathLibrary::Vector2::dotProduct(directionOfTarget, getTransform()->getForward())) * (180 / PI) < 30;
+	return RAYMATH_H::acos(MathLibrary::Vector2::dotProduct(directionOfTarget, getTransform()->getForward())) * (180 / PI) < 30;
 }
