@@ -14,6 +14,8 @@ public:
 
 	bool getIsAggressive() { return m_isAggressive; }
 	void setIsAggressive(bool value) { m_isAggressive = value; }
+
+	bool getTargetInSight();
 private:
 	Actor* m_target;
 	bool m_isAggressive;

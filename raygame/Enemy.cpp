@@ -9,6 +9,7 @@
 #include "IdleDecision.h"
 #include "InRangeDecision.h"
 #include "DecisionComponent.h"
+#include "raymath.h"
 
 Enemy::Enemy(float x, float y, const char* name, float maxForce, float maxSpeed, Actor* target) : Agent(x, y, name, maxForce, maxSpeed)
 {
@@ -43,5 +44,15 @@ void Enemy::start()
 bool Enemy::getTargetInRange()
 {
 	float distance = (m_target->getTransform()->getWorldPosition() - getTransform()->getWorldPosition()).getMagnitude();
-	return distance <= 300;
+	
+	if (getTargetInSight() && distance <= 300)
+		return true;
+
+	return false;
+}
+
+bool Enemy::getTargetInSight()
+{
+	MathLibrary::Vector2 directionOfTarget = (m_target->getTransform()->getWorldPosition() - getTransform()->getWorldPosition()).getNormalized();
+	return RAYMATH_H::acos( MathLibrary::Vector2::dotProduct(directionOfTarget, getTransform()->getForward())) * (180 / PI) < 30;
 }
