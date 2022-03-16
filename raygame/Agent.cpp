@@ -10,8 +10,7 @@ void Agent::start()
 	Actor::start();
 
 	m_spriteComponent = dynamic_cast<Sprite*>(addComponent(new Sprite("Images/enemy.png")));
-	m_moveComponent = addComponent<MovementComponent>();
-	m_moveComponent->setMaxSpeed(100);
+	
 	m_moveComponent->setUpdateFacing(true);
 }
 

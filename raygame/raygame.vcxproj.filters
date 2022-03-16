@@ -15,6 +15,9 @@
     <Filter Include="Decisions">
       <UniqueIdentifier>{2173afeb-0b12-4da7-ae4a-22d029ec6355}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Components\Behaviors">
+      <UniqueIdentifier>{5906a0b6-afa7-460c-b0c2-5725007f8c22}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -59,18 +62,6 @@
     <ClCompile Include="InputComponent.cpp">
       <Filter>Components</Filter>
     </ClCompile>
-    <ClCompile Include="SeekBehaviour.cpp">
-      <Filter>Components</Filter>
-    </ClCompile>
-    <ClCompile Include="FleeBehavior.cpp">
-      <Filter>Components</Filter>
-    </ClCompile>
-    <ClCompile Include="WanderBehavior.cpp">
-      <Filter>Components</Filter>
-    </ClCompile>
-    <ClCompile Include="SteeringBehaviors.cpp">
-      <Filter>Components</Filter>
-    </ClCompile>
     <ClCompile Include="StateMachine.cpp">
       <Filter>Components</Filter>
     </ClCompile>
@@ -82,6 +73,39 @@
     </ClCompile>
     <ClCompile Include="Agent.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DecisionComponent.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="SteeringBehaviors.cpp">
+      <Filter>Components\Behaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="SeekBehaviour.cpp">
+      <Filter>Components\Behaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="FleeBehavior.cpp">
+      <Filter>Components\Behaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="WanderBehavior.cpp">
+      <Filter>Components\Behaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="InRangeDecision.cpp">
+      <Filter>Decisions</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AggressiveDecision.cpp">
+      <Filter>Decisions</Filter>
+    </ClCompile>
+    <ClCompile Include="IdleDecision.cpp">
+      <Filter>Decisions</Filter>
+    </ClCompile>
+    <ClCompile Include="WanderDecision.cpp">
+      <Filter>Decisions</Filter>
+    </ClCompile>
+    <ClCompile Include="SeekDecision.cpp">
+      <Filter>Decisions</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -127,18 +151,6 @@
     <ClInclude Include="InputComponent.h">
       <Filter>Components</Filter>
     </ClInclude>
-    <ClInclude Include="SeekBehaviour.h">
-      <Filter>Components</Filter>
-    </ClInclude>
-    <ClInclude Include="FleeBehavior.h">
-      <Filter>Components</Filter>
-    </ClInclude>
-    <ClInclude Include="WanderBehavior.h">
-      <Filter>Components</Filter>
-    </ClInclude>
-    <ClInclude Include="SteeringBehaviors.h">
-      <Filter>Components</Filter>
-    </ClInclude>
     <ClInclude Include="StateMachine.h">
       <Filter>Components</Filter>
     </ClInclude>
@@ -150,6 +162,39 @@
     </ClInclude>
     <ClInclude Include="Agent.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DecisionComponent.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="SteeringBehaviors.h">
+      <Filter>Components\Behaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="SeekBehaviour.h">
+      <Filter>Components\Behaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="FleeBehavior.h">
+      <Filter>Components\Behaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="WanderBehavior.h">
+      <Filter>Components\Behaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="InRangeDecision.h">
+      <Filter>Decisions</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AggressiveDecision.h">
+      <Filter>Decisions</Filter>
+    </ClInclude>
+    <ClInclude Include="IdleDecision.h">
+      <Filter>Decisions</Filter>
+    </ClInclude>
+    <ClInclude Include="WanderDecision.h">
+      <Filter>Decisions</Filter>
+    </ClInclude>
+    <ClInclude Include="SeekDecision.h">
+      <Filter>Decisions</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -2,7 +2,7 @@
 #include "Actor.h"
 #include "ActorArray.h"
 #include <Vector2.h>
-class MovementComponent;
+#include"MovementComponent.h"
 class Sprite;
 class SteeringBehaviors;
 
@@ -10,10 +10,13 @@ class Agent :
 	public Actor
 {
 public:
-	Agent(float x, float y, const char* name) : Actor(x, y, name)
+	Agent(float x, float y, const char* name, float maxForce, float maxSpeed) : Actor(x, y, name)
 	{
-		m_moveComponent = nullptr;
+		setMaxForce(maxForce);
+		m_moveComponent = addComponent<MovementComponent>();
+		m_moveComponent->setMaxSpeed(maxSpeed);
 		m_spriteComponent = nullptr;
+
 	}
 
 	~Agent()

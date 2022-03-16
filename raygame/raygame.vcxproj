@@ -147,6 +147,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AABBCollider.cpp" />
+    <ClCompile Include="AggressiveDecision.cpp" />
     <ClCompile Include="BooleanDecision.cpp" />
     <ClCompile Include="Actor.cpp" />
     <ClCompile Include="CircleCollider.cpp" />
@@ -154,23 +155,30 @@
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="Decision.cpp" />
     <ClCompile Include="Agent.cpp" />
+    <ClCompile Include="DecisionComponent.cpp" />
+    <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Engine.cpp" />
     <ClCompile Include="FleeBehavior.cpp" />
+    <ClCompile Include="IdleDecision.cpp" />
     <ClCompile Include="InputComponent.cpp" />
+    <ClCompile Include="InRangeDecision.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MovementComponent.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SeekBehaviour.cpp" />
+    <ClCompile Include="SeekDecision.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="StartScene.cpp" />
     <ClCompile Include="StateMachine.cpp" />
     <ClCompile Include="SteeringBehaviors.cpp" />
     <ClCompile Include="Transform2D.cpp" />
     <ClCompile Include="WanderBehavior.cpp" />
+    <ClCompile Include="WanderDecision.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AABBCollider.h" />
+    <ClInclude Include="AggressiveDecision.h" />
     <ClInclude Include="BooleanDecision.h" />
     <ClInclude Include="Actor.h" />
     <ClInclude Include="ActorArray.h" />
@@ -179,19 +187,25 @@
     <ClInclude Include="Component.h" />
     <ClInclude Include="Decision.h" />
     <ClInclude Include="Agent.h" />
+    <ClInclude Include="DecisionComponent.h" />
+    <ClInclude Include="Enemy.h" />
     <ClInclude Include="Engine.h" />
     <ClInclude Include="FleeBehavior.h" />
+    <ClInclude Include="IdleDecision.h" />
     <ClInclude Include="InputComponent.h" />
+    <ClInclude Include="InRangeDecision.h" />
     <ClInclude Include="MovementComponent.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SeekBehaviour.h" />
+    <ClInclude Include="SeekDecision.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="StartScene.h" />
     <ClInclude Include="StateMachine.h" />
     <ClInclude Include="SteeringBehaviors.h" />
     <ClInclude Include="Transform2D.h" />
     <ClInclude Include="WanderBehavior.h" />
+    <ClInclude Include="WanderDecision.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
